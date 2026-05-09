@@ -41,3 +41,17 @@ Quand tu maitrises cette version, on peut evoluer vers:
 - Node.js + Express (API)
 - Base de donnees SQLite ou PostgreSQL
 - Authentification (JWT)
+
+## Workflow Git
+
+- `main` : version stable et livrable.
+- `dev` : branche d integration pour tester les nouveautes.
+- `feature/...` : une branche par fonctionnalite.
+
+Exemple de cycle:
+
+1. Créer une branche feature depuis `dev`.
+2. Développer et tester.
+3. Committer avec un message clair.
+4. Pousser la branche sur GitHub.
+5. Faire une pull request vers `dev`.
