@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Gestion RH</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="badge">Formation pratique</p>
+        <h1>Application Gestion RH</h1>
+        <p class="subtitle">
+          Objectif: apprendre JavaScript en construisant une mini application métier.
+        </p>
+      </header>
+
+      <section class="panel">
+        <h2>Ajouter un employé</h2>
+        <form id="employee-form" class="grid-form">
+          <label>
+            Nom 
+            <input id="name" name="name" type="text" placeholder="Ex: Martin" required />
+          </label>
+
+          <label>
+            Prénom
+            <input id="surname" name="surname" type="text" placeholder="Ex: Leila" required />
+          </label>
+
+          <label>
+            Poste
+            <input id="role" name="role" type="text" placeholder="Ex: Développeuse" required />
+          </label>
+
+          <label>
+            Département
+            <select id="department" name="department" required>
+              <option value="">Choisir</option>
+              <option value="IT">IT</option>
+              <option value="RH">RH</option>
+              <option value="Finance">Finance</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </label>
+
+          <label>
+            Email
+            <input id="email" name="email" type="email" placeholder="prenom.nom@entreprise.com" required />
+          </label>
+
+          <label>
+            Salaire
+            <input id="salary" name="salary" type="number" placeholder="Ex: 50000" required />
+          </label>
+
+
+          <button type="submit">Ajouter</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <h2>Liste des employés</h2>
+          <div class="actions">
+            <input id="search" type="search" placeholder="Rechercher nom, poste ou département" />
+            <input id="import-json-input" type="file" accept="application/json,.json" hidden />
+            <button id="import-btn" type="button">Importer JSON</button>
+            <button id="export-btn" type="button">Exporter JSON</button>
+          </div>
+        </div>
+
+        <p id="empty-state" class="empty-state">Aucun employé pour le moment.</p>
+        <ul id="employee-list" class="employee-list"></ul>
+      </section>
+    </main>
+
+    <div id="import-preview" class="modal" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="import-preview-title">
+        <h3 id="import-preview-title">Aperçu de l'import JSON</h3>
+        <p id="import-preview-summary" class="modal-summary"></p>
+        <ul id="import-preview-list" class="preview-list"></ul>
+        <div class="modal-actions">
+          <button id="import-cancel-btn" type="button" class="secondary-btn">Annuler</button>
+          <button id="import-confirm-btn" type="button">Confirmer l'import</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
